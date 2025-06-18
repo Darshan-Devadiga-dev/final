@@ -103,7 +103,7 @@ async def main():
     """Start the WebSocket server"""
     logger.info("Starting WebSocket server on localhost:8765")
     port = int(os.environ.get("PORT", 8765))
-    async with websockets.serve(register_client, "0.0.0.0", port):
+    async with websockets.serve(register_client, host, port):
         await asyncio.Future()  # Run forever
 
 if __name__ == "__main__":
