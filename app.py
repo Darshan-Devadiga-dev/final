@@ -3,6 +3,7 @@ import websockets
 import json
 import logging
 from datetime import datetime
+import os
 
 # Set up logging
 logging.basicConfig(level=logging.INFO)
