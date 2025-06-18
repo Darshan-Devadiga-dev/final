@@ -101,7 +101,8 @@ async def broadcast_peer_list():
 async def main():
     """Start the WebSocket server"""
     logger.info("Starting WebSocket server on localhost:8765")
-    async with websockets.serve(register_client, "localhost", 8765):
+    port = int(os.environ.get("PORT", 8765))
+    async with websockets.serve(register_client, "0.0.0.0", port):
         await asyncio.Future()  # Run forever
 
 if __name__ == "__main__":
